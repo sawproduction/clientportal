@@ -7,12 +7,12 @@ export async function updateSession(request: NextRequest) {
   })
 
   // Use fallback values for static generation
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!;
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 
   const supabase = createServerClient(
-    supabaseUrl,
-    supabaseKey,
+    supabaseUrl!,
+    supabaseKey!,
     {
       cookies: {
         getAll() {
